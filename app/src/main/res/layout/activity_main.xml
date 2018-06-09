@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mvpdemo.rajnit.com.mvpblogdemo.view.activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_52sdp"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white_trans">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:padding="@dimen/_8sdp"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MVP Demo"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="sans-serif"
+            android:layout_marginRight="@dimen/_8sdp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_28sdp"
+            android:text="Logout"
+            android:textColor="@color/blue_start"
+            android:background="@drawable/blue_border"
+            android:layout_marginRight="@dimen/_8sdp"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
