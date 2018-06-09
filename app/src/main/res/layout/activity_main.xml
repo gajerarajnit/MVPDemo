@@ -39,7 +39,8 @@
             android:text="Logout"
             android:textColor="@color/blue_start"
             android:background="@drawable/blue_border"
-            android:layout_marginRight="@dimen/_8sdp"/>
+            android:layout_marginRight="@dimen/_8sdp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
