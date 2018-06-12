@@ -15,6 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         app:cardCornerRadius="@dimen/_60sdp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,6 +39,7 @@
         android:layout_marginTop="24dp"
         android:visibility="visible"
         app:contentPadding="@dimen/_8sdp"
+        app:cardElevation="4dp"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

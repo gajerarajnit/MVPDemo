@@ -28,7 +28,7 @@
 
     <style name="MainTheme" parent="AppThemeNoActionBar">
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-        <item name="android:windowBackground">@mipmap/splash_empty</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
 
     <style name="PrimaryButton" parent="Theme.AppCompat">
