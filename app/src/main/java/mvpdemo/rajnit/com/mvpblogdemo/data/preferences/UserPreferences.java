@@ -4,16 +4,24 @@ import android.support.annotation.Keep;
 
 import java.util.List;
 
-import mvpdemo.rajnit.com.mvpblogdemo.data.models.UserModel;
+import mvpdemo.rajnit.com.mvpblogdemo.data.models.Note;
 
 @Keep
 public interface UserPreferences {
 
-    String USERS_LIST = "USERS_LIST";
+    String IS_USER_LOGIN = "isUserLogin";
+    String NOTES_LIST = "notes_list";
 
-    public void setUserList(UserModel userModel);
+    public void setUserLogin(boolean status);
 
-    public List<UserModel> getUserList();
+    public boolean isUserLogin();
+
+    public void addNote(Note note);
+
+    public List<Note> getNotes();
 
     public void clearUser();
+
+    void removeNote(Note note);
+
 }

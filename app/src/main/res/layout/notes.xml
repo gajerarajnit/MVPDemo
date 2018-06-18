@@ -18,15 +18,14 @@
             android:id="@+id/viewIndicator"
             android:layout_width="@dimen/_4sdp"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent"
-            tools:background="@tools:sample/backgrounds/scenic" />
+            android:background="@color/colorAccent" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
             android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -40,13 +39,14 @@
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:maxLines="5"
+                android:singleLine="false"
                 android:ellipsize="end"/>
 
             <TextView
                 android:id="@+id/tvDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/black2"
                 android:textSize="@dimen/_10sdp"
