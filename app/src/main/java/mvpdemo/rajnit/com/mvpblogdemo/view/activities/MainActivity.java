@@ -75,16 +75,20 @@ public class MainActivity extends AbstractActivity implements MainActivityView {
         });
     }
 
-
     private void initRecyclerView() {
         recyclerViewNote.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new NotesAdapter(new ArrayList<Note>(),mPresenter);
+        mAdapter = new NotesAdapter(new ArrayList<Note>(), mPresenter);
         recyclerViewNote.setAdapter(mAdapter);
     }
 
     @Override
-    public void setAdapter(List<Note> noteList){
+    public void setAdapter(List<Note> noteList) {
         mAdapter.updateAdapter(noteList);
+    }
+
+    @Override
+    public void clearEdittext() {
+        edtNote.setText("");
     }
 
     @Override
@@ -94,13 +98,9 @@ public class MainActivity extends AbstractActivity implements MainActivityView {
 
     @Override
     public void showLoginActivity() {
-        startActivity(new Intent( this,LoginActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
         finish();
-    }
-
-    @Override
-    public void finishActivity() {
-
     }
 
 }

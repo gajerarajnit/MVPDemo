@@ -36,13 +36,26 @@ public class UserPreferencesImpl implements UserPreferences {
         dbNotes.add(0, note);
 
         String noteAsString = new Gson().toJson(dbNotes);
-
         mPreferences.edit().putString(NOTES_LIST, noteAsString).apply();
     }
 
     @Override
     public void removeNote(Note note) {
 
+        ArrayList<Note> dbNotes = getNotes();
+        for (int i = 0; i < dbNotes.size(); i++) {
+            if (dbNotes.get(i).getId() == note.getId()) {
+                dbNotes.remove(i);
+                break;
+            }
+        }
+
+        if (dbNotes.size() > 0) {
+            String noteAsString = new Gson().toJson(dbNotes);
+            mPreferences.edit().putString(NOTES_LIST, noteAsString).apply();
+        } else {
+            mPreferences.edit().putString(NOTES_LIST, "").apply();
+        }
     }
 
     @Override
@@ -61,7 +74,8 @@ public class UserPreferencesImpl implements UserPreferences {
 
     @Override
     public void clearUser() {
-        mPreferences.edit().putBoolean(IS_USER_LOGIN, false)
+        mPreferences.edit()
+                .putBoolean(IS_USER_LOGIN, false)
                 .putString(NOTES_LIST, "")
                 .apply();
     }

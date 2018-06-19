@@ -57,4 +57,5 @@ public class LoginActivity extends AbstractActivity implements LoginActivityView
     public void showError(String errorMsg) {
         showToast(errorMsg);
     }
+
 }

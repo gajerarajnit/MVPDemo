@@ -18,10 +18,12 @@ public class SplashActivity extends AbstractActivity implements SplashActivityVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        mPresenter.onCreate(getIntent());
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mPresenter.startLoginActivity();
+                mPresenter.checkUserIsLogin();
             }
         },2000);
     }
@@ -34,6 +36,13 @@ public class SplashActivity extends AbstractActivity implements SplashActivityVi
     @Override
     public void showLoginActivity() {
         startActivity(new Intent(SplashActivity.this,LoginActivity.class));
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+        finish();
+    }
+
+    @Override
+    public void showMainActivity() {
+        startActivity(new Intent(SplashActivity.this,MainActivity.class));
         overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
         finish();
     }

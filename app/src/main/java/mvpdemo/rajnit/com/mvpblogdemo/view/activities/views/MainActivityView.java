@@ -9,9 +9,13 @@ import mvpdemo.rajnit.com.mvpblogdemo.data.models.Note;
  */
 
 public interface MainActivityView {
+
     void showLoginActivity();
-    void finishActivity();
+
     void showError(String msg);
 
     void setAdapter(List<Note> notes);
+
+    void clearEdittext();
+
 }

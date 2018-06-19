@@ -3,6 +3,8 @@ package mvpdemo.rajnit.com.mvpblogdemo.presenter;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import mvpdemo.rajnit.com.mvpblogdemo.data.preferences.UserPreferences;
+import mvpdemo.rajnit.com.mvpblogdemo.data.preferences.UserPreferencesImpl;
 import mvpdemo.rajnit.com.mvpblogdemo.view.activities.views.LoginActivityView;
 
 /**
@@ -12,19 +14,21 @@ import mvpdemo.rajnit.com.mvpblogdemo.view.activities.views.LoginActivityView;
 public class LoginPresenter extends AbstractPresenter {
 
     private LoginActivityView mView;
+    UserPreferences mDatabase = new UserPreferencesImpl();
 
     public LoginPresenter(LoginActivityView mView) {
         this.mView = mView;
     }
 
     public void onCreate(Intent intent) {
-        // Handle intent here...
+        // Handle intent data here...
     }
 
     /**
      * validate login data here
      * and if data valid, redirect to main screen.
      */
+
     public void login(String username, String password) {
         if(TextUtils.isEmpty(username)){
             mView.showError("Please enter username");
@@ -35,6 +39,7 @@ public class LoginPresenter extends AbstractPresenter {
         }else if(password.length() < 6){
             mView.showError("Password must contains 6 letters");
         }else {
+            mDatabase.setUserLogin(true);
             mView.showMainActivity();
         }
     }

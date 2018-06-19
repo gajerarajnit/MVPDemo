@@ -75,6 +75,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
                 @Override
                 public void onClick(View v) {
                     noteDeleteListener.onNoteDeleteClicked(noteList.get(getAdapterPosition()));
+                    noteList.remove(getAdapterPosition());
+                    notifyDataSetChanged();
                 }
             });
         }

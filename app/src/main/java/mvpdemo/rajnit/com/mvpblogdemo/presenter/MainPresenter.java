@@ -3,6 +3,7 @@ package mvpdemo.rajnit.com.mvpblogdemo.presenter;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import mvpdemo.rajnit.com.mvpblogdemo.data.models.Note;
@@ -19,6 +20,7 @@ public class MainPresenter extends AbstractPresenter implements NotesAdapter.Not
 
     private MainActivityView mView;
     UserPreferences mDatabase = new UserPreferencesImpl();
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy hh:mm a");
 
     public MainPresenter(MainActivityView mView) {
         this.mView = mView;
@@ -35,18 +37,16 @@ public class MainPresenter extends AbstractPresenter implements NotesAdapter.Not
         if (TextUtils.isEmpty(note)) {
             mView.showError("Please add few words for note.");
         } else {
-            mDatabase.addNote(new Note(note, new Date().toString()));
+            mDatabase.addNote(new Note(System.currentTimeMillis(),note, simpleDateFormat.format(new Date())));
             mView.setAdapter(mDatabase.getNotes());
+            mView.clearEdittext();
         }
-    }
-
-    public void startLoginActivity() {
-        mView.showLoginActivity();
     }
 
     @Override
     public void onNoteDeleteClicked(Note note) {
         mDatabase.removeNote(note);
+//        mView.setAdapter(mDatabase.getNotes());
     }
 
     public void logoutApp() {

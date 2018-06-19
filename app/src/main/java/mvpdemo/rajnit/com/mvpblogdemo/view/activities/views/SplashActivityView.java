@@ -5,5 +5,9 @@ package mvpdemo.rajnit.com.mvpblogdemo.view.activities.views;
  */
 
 public interface SplashActivityView {
+
     void showLoginActivity();
+
+    void showMainActivity();
+
 }
